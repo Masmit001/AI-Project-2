@@ -1,0 +1,30 @@
+[
+  {
+    "question": "What is your return policy?",
+    "answer": "We offer a 30-day return policy. If you are not satisfied with your purchase, you can return it within 30 days for a full refund."
+  },
+  {
+    "question": "How do I track my order?",
+    "answer": "Once your order is shipped, you will receive an email with a tracking link. You can also track your order via the 'My Account' page."
+  },
+  {
+    "question": "Do you ship internationally?",
+    "answer": "Yes, we ship internationally to over 50 countries. Shipping costs and delivery times vary depending on the destination."
+  },
+  {
+    "question": "What payment methods do you accept?",
+    "answer": "We accept major credit cards (Visa, MasterCard, Amex), PayPal, Apple Pay, and Google Pay."
+  },
+  {
+    "question": "How can I contact customer support?",
+    "answer": "You can reach our customer support team via the 'Contact Us' form on our website, or by emailing support@ourstore.com. We are available 24/7."
+  },
+  {
+    "question": "Can I modify or cancel my order after placing it?",
+    "answer": "We process orders quickly, but if you contact us within 1 hour of placing the order, we can usually accommodate modifications or cancellations."
+  },
+  {
+    "question": "What do I do if I received a defective item?",
+    "answer": "We apologize for the inconvenience! Please contact our support team with a photo of the defective item, and we will send a replacement immediately."
+  }
+]
