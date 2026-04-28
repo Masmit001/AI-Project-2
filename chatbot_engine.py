@@ -7,7 +7,7 @@ import numpy as np
 import string
 import os
 
-# Download necessary NLTK data for tokenization and lemmatization
+
 nltk.download('punkt', quiet=True)
 nltk.download('punkt_tab', quiet=True) 
 nltk.download('wordnet', quiet=True)
@@ -22,11 +22,11 @@ def load_faqs(filepath='faqs.json'):
 
 def preprocess_text(text):
     text = text.lower()
-    # Remove punctuation
+    
     text = "".join([char for char in text if char not in string.punctuation])
-    # Tokenize
+    
     tokens = nltk.word_tokenize(text)
-    # Lemmatize
+    
     lemmatized = [lemmatizer.lemmatize(word) for word in tokens]
     return " ".join(lemmatized)
 
@@ -36,29 +36,29 @@ class FAQChatbot:
         self.questions = [faq['question'] for faq in self.faqs]
         self.answers = [faq['answer'] for faq in self.faqs]
         
-        # Preprocess predefined questions
+        
         self.processed_questions = [preprocess_text(q) for q in self.questions]
         
-        # Initialize TF-IDF Vectorizer
+        
         self.vectorizer = TfidfVectorizer()
         
-        # Fit vectorizer on predefined questions
+        
         if self.processed_questions:
             self.tfidf_matrix = self.vectorizer.fit_transform(self.processed_questions)
             
     def get_response(self, user_query, threshold=0.2):
         processed_query = preprocess_text(user_query)
-        # Transform the user query using the fitted vectorizer
+        
         query_vec = self.vectorizer.transform([processed_query])
         
-        # Calculate cosine similarity between user query and FAQ questions
+        
         similarities = cosine_similarity(query_vec, self.tfidf_matrix)
         
-        # Get the index of the highest similarity
+        
         best_match_idx = np.argmax(similarities)
         best_score = similarities[0, best_match_idx]
         
-        # Log to debug
+        
         print(f"Query: '{user_query}' | Best match: '{self.questions[best_match_idx]}' (Score: {best_score:.2f})")
         
         if best_score > threshold:
