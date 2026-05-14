@@ -67,7 +67,7 @@ class FAQChatbot:
             return "I'm sorry, I couldn't understand your question. Could you try rephrasing it or asking something else?"
 
 if __name__ == "__main__":
-    # Test
+    
     bot = FAQChatbot()
     print("Bot is ready. Testing query 'How do I return something?'")
     print("Response:", bot.get_response("How do I return something?"))
